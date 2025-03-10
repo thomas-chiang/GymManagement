@@ -1,0 +1,4 @@
+@host=http://localhost:5209
+@userId=c9eb786e-adb9-4396-ad28-ea547919f75b
+
+GET {{host}}/users/{{userId}}/profiles
