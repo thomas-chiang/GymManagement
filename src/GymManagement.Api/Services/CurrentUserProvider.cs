@@ -24,10 +24,6 @@ public class CurrentUserProvider(IHttpContextAccessor _httpContextAccessor) : IC
 
     private IReadOnlyList<string> GetClaimValues(string claimType)
     {
-        foreach (var claim in _httpContextAccessor.HttpContext!.User.Claims)
-        {
-            Console.WriteLine($"Claim Type: {claim.Type}, Claim Value: {claim.Value}");
-        }
         return _httpContextAccessor.HttpContext!.User.Claims
             .Where(claim => claim.Type == claimType)
             .Select(claim => claim.Value)
