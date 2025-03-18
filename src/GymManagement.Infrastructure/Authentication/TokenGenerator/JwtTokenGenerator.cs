@@ -59,7 +59,6 @@ public class JwtTokenGenerator : IJwtTokenGenerator
 
     private static void AddRoles(User user, List<Claim> claims)
     {
-        claims.Add(new Claim("roles", "randomRole"));
         user.GetProfileTypes().ForEach(type =>
         {
             claims.Add(new Claim("roles", type.Name));
