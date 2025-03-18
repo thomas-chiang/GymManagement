@@ -6,6 +6,7 @@ using GymManagement.Application.Gyms.Queries.GetGym;
 using GymManagement.Application.Gyms.Queries.ListGyms;
 using GymManagement.Contracts.Gyms;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GymManagement.Api.Controllers;
@@ -14,6 +15,7 @@ namespace GymManagement.Api.Controllers;
 public class GymsController(ISender _mediator) : ApiController
 {
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> CreateGym(
         CreateGymRequest request,
         Guid subscriptionId)
@@ -33,6 +35,7 @@ public class GymsController(ISender _mediator) : ApiController
     }
 
     [HttpDelete("{gymId:guid}")]
+    [Authorize]
     public async Task<IActionResult> DeleteGym(Guid subscriptionId, Guid gymId)
     {
         var command = new DeleteGymCommand(subscriptionId, gymId);

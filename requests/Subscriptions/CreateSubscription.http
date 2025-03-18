@@ -1,5 +1,5 @@
 @host=http://localhost:5209
-@adminId=78576CE8-F172-447A-9A25-569A205B0CD7
+@adminId=7778561A-09E9-48C9-B862-D5F42FEC0CBE
 
 POST {{host}}/Subscriptions
 Content-Type: application/json
