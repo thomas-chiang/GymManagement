@@ -7,8 +7,8 @@ using TestCommon.Gyms;
 
 namespace GymManagement.Application.SubcutaneousTests.Gyms.Commands;
 
-[Collection(MediatorFactoryCollection.CollectionName)]
-public class CreateGymTests(MediatorFactory mediatorFactory)
+[Collection(CreateGymMediatorFactoryCollection.CollectionName)]
+public class CreateGymTests(CreateGymMediatorFactory mediatorFactory)
 {
     private readonly IMediator _mediator = mediatorFactory.CreateMediator();
 
